@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".MainActivity">
+
+    <!-- ProgressBar centered in RelativeLayout -->
+    <ProgressBar
+        android:id="@+id/idPBLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <!-- ImageView for background -->
+    <ImageView
+        android:id="@+id/idTVBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@color/defaultBackground"
+        android:contentDescription="Background view" />
+
+    <!-- City Name at the top center -->
+    <TextView
+        android:id="@+id/idTVCityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="City Name"
+        android:textAlignment="center"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="18sp" />
+
+    <!-- Edit text and search icon inside LinearLayout -->
+    <LinearLayout
+        android:id="@+id/idLLEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVCityName"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/idTILCity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4.5"
+            android:background="@android:color/transparent"
+            android:hint="@string/city_input"
+            android:padding="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idEdtCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="@string/city_input"
+                android:textColor="@color/defaultTextColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/idTVSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_search"
+            android:contentDescription="Search" />
+    </LinearLayout>
+
+    <!-- Temperature, Icon, and Conditions -->
+    <TextView
+        android:id="@+id/idTVTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idLLEdt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/temperature_main"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/idIVIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/idTVTemperature"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:contentDescription="Icon" />
+
+    <TextView
+        android:id="@+id/idTVCondition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idIVIcon"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/condition_text"
+        android:textAlignment="center"
+        android:textColor="@color/defaultTextColor" />
+
+    <!-- Wind Speed, Humidity, and Rain Chance in a Linear Layout -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_below="@id/idTVCondition"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/idTVWindSpeed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/wind_speed_text"
+            android:textAlignment="center"
+            android:textColor="@color/defaultTextColor" />
+
+        <TextView
+            android:id="@+id/idTVHumidity"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/humidity_text"
+            android:textAlignment="center"
+            android:textColor="@color/defaultTextColor" />
+
+        <TextView
+            android:id="@+id/idTVRainChance"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/rain_chance_text"
+            android:textAlignment="center"
+            android:textColor="@color/defaultTextColor" />
+    </LinearLayout>
+
+    <!-- Switches for Temperature and Wind Units -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/idTempSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linearLayout"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="@string/temperature_unit_text"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="20sp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/idWindSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linearLayout"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="@string/wind_units_text"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="20sp" />
+
+    <!-- BottomNavigationView and FragmentContainerView inside ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:paddingTop="?attr/actionBarSize">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:backgroundTintMode="src_in"
+            app:itemHorizontalTranslationEnabled="true"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/bottom_nav_menu"
+            tools:visibility="visible" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment_activity_main"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="50dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@id/nav_view"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/mobile_navigation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

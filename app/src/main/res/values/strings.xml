@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Weather App Final Project</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="city_name_placeholder">City Name</string>
+    <string name="city_input">Enter City Name</string>
+    <string name="temperature_main">Temperature</string>
+    <string name="condition_text">Condition:</string>
+    <string name="wind_speed_text">Wind Speed:</string>
+    <string name="humidity_text">Humidity:</string>
+    <string name="rain_chance_text">Rain Chance:</string>
+    <string name="temperature_unit_text">Temperature (°F)</string>
+    <string name="wind_units_text">Units (Imperial)</string>
+    <string name="warning_text_search_bar">City Name cannot be empty!</string>
+
+</resources>
